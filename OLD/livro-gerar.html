@@ -8,6 +8,7 @@
   <script src="js/lib/prefixfree.js"></script>
   <script src="js/lib/modernizr.js"></script>
   <script src="js/URLSearchParams.min.js"></script> <!--https://github.com/ungap/url-search-params-->
+  <script src="js/gerar.js"></script> 
 </head>
 <body>
   <script>
@@ -23,10 +24,10 @@
       <img src="images/capa.jpg">
     </div>
     <div class="Heidelberg-Spread">
-      <img src="images/pg01.jpg">
+        <img id="pg01" src="images/pg01.jpg">
     </div>
     <div class="Heidelberg-Spread">
-      <img src="images/pg02_03.jpg">
+      <img id="pg02_03" src="images/pg02_03.jpg">
     </div>
     <div class="Heidelberg-Spread">
       <script>document.write("<img src='images/pg04_05" + deleDela + ".jpg'>")</script>
@@ -42,6 +43,7 @@
     </div>
   </div>
 
+  <script>GerarPaginasDoLivro();</script>
   <script src="js/lib/jquery.js"></script>
   <script src="js/lib/hammer.js"></script>
   <script src="js/lib/jquery.hammer.js"></script>
