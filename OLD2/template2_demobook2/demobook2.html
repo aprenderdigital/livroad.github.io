@@ -6,36 +6,7 @@
 </div>
 <div class="page" data-thumbnail-image="template2_demobook2/thumb1.jpg">
 	<div id="demo2-page1b" class="demo2-flexible-container">
-		<canvas id="pag01" class="imglivro" width="500" height = "435"> 
-				<script>
-						//var ok = true;
-						//function myFunction() {
-							var image1 = document.getElementById("pag01"); 
-							//if (image1.complete != true) {
-							//	alert("não carregou");
-							//	return;
-							//}
-							//if (ok) {
-							//	ok = false;
-							var canvas1 = image1; //document.createElement("canvas");
-							//canvas1.width = image1.width;
-							//canvas1.height = image1.height;
-							var context1 = canvas1.getContext("2d");
-							//context1.drawImage(image1, 0, 0);
-							context1.fillStyle="#FFFFFF";
-							context1.font = "13pt Patrick Hand";
-							context1.fillText("MEU NOME É PAPEL", 125, 45);
-							context1.fillText("PODERIA SER MIGUEL OU RAFAEL.", 125, 65);
-							context1.fillText("OU QUEM SABE MARIBEL?", 125, 85);
-					
-							//image1.src = canvas1.toDataURL();
-							//}
-					
-						//}
-						//setTimeout(myFunction, 3000)
-					
-					</script>
-					
+		<img id="pag01" class="imglivro" src="template2_demobook2/p01.jpg"> 
 	</div>
 </div>
 
@@ -43,25 +14,25 @@
 	var ok = true;
 	function myFunction() {
 		var image1 = document.getElementById("pag01"); 
-		//if (image1.complete != true) {
-		//	alert("não carregou");
-		//	return;
-		//}
-		//if (ok) {
-		//	ok = false;
-		var canvas1 = image1; //document.createElement("canvas");
-		//canvas1.width = image1.width;
-		//canvas1.height = image1.height;
+		if (image1.complete != true) {
+			alert("não carregou");
+			return;
+		}
+		if (ok) {
+			ok = false;
+		var canvas1 = document.createElement("canvas");
+		canvas1.width = image1.width;
+		canvas1.height = image1.height;
 		var context1 = canvas1.getContext("2d");
-		//context1.drawImage(image1, 0, 0);
-		context1.fillStyle="#FFFFFF";
+		context1.drawImage(image1, 0, 0);
+		context1.fillStyle="#000000";
 		context1.font = "13pt Patrick Hand";
 		context1.fillText("MEU NOME É PAPEL", 125, 45);
 		context1.fillText("PODERIA SER MIGUEL OU RAFAEL.", 125, 65);
 		context1.fillText("OU QUEM SABE MARIBEL?", 125, 85);
 
-		//image1.src = canvas1.toDataURL();
-		//}
+		image1.src = canvas1.toDataURL();
+		}
 
 	}
 	setTimeout(myFunction, 3000)
