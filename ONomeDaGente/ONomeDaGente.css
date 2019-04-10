@@ -1,5 +1,10 @@
-p.texto {
+p.texto-normal {
     font-family: 'Patrick Hand', cursive;
     color: black;
     font-size: 13pt;
+  }
+p.texto-grande {
+    font-family: 'Patrick Hand', cursive;
+    color: black;
+    font-size: 17pt;
   }

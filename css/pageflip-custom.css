@@ -618,14 +618,10 @@ body {
 	font-weight: normal;
 }
 div#demo2-page1 {
-	background: #000;
+	background:  #00c1fd;
 }
 div#demo2-page1 .demo2-flexible-centered {
 	height: 200px;
-}
-img.imglivro {
-	max-height: 100%;
-	max-width: 100%;
 }
 div#demo2-page2 {
 	background: #009fcf;
