@@ -1,1 +1,1 @@
-﻿var Key = { Copyright: "APRENDER.digital", Key: "m9ibD/SSX7gTx6LZKc"};
+﻿var Key = { Copyright: "© 2015 Pageflip5 offline test copy", Key: "f321IZ3VAoPx623cJCVnpxd"};
