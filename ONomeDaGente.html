@@ -30,7 +30,7 @@
 
 	<script>
 		var url_string = window.location.href;
-		var url = new URL(url_string);
+		var url = new URLSearchParams(url_string);
 		
 		var nameUP = url.searchParams.get("nome");
 		if (nameUP== null || nameUP == "") nameUP = "JULIA";
