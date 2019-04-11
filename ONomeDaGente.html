@@ -58,6 +58,9 @@
 		if (deleDela == null || deleDela == "") deleDela = "dela";
 		else deleDela = deleDela.toLowerCase();
 		deleDela = deleDela.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+		var xhr = new XMLHttpRequest();
+		xhr.open("GET", "https://script.google.com/macros/s/AKfycbwTrA-fBbGU4gkovnVnueSeAnIvXLy0Q30lyw4yl45ye1YaFRd8/exec?&livro=ONomeDaGente&nome="+nameLC+"&genero="+deleDela, true); 
 	</script>
 
 	<!-- start embed pageflip -->
