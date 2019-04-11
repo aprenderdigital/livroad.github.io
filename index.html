@@ -1,0 +1,82 @@
+<html lang="pt" xml:lang="pt" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/form.css">  
+  <script>
+    function DefineNome(input) {
+      document.getElementById("dele").innerHTML = "O nome <b>dele</b> é " + input.value + ".";
+      document.getElementById("dela").innerHTML = "O nome <b>dela</b> é " + input.value + ".";
+    }
+  </script>
+</head>
+
+<body>
+  <br />
+  <div class="container">
+    <div class="bd-example">
+    <form class="needs-validation" novalidate action="ONomeDaGente.html#book/page/1" method="GET">
+      <div class="form-group">
+        <label for="nome"><b>Nome</b></label>
+        <input type="nome" class="form-control form-control-lg"
+          placeholder="SEU NOME" maxlength="15" required
+          id="formNome"
+          name="nome"
+          onkeyup=DefineNome(this)>
+          <div class="invalid-feedback">
+              Escreva aqui o seu nome.
+          </div>
+          <small id="nomeHelp" class="form-text text-muted">Digite o seu nome. Use no m&aacute;ximo 15 letras.
+          Sugerimos usar o nome sem o sobrenome. Por exemplo: Julia, Ana Cl&aacute;udia, Felipe.
+          </small>
+      </div>
+      <br />
+      <label for="frase"><b>Escolha a frase</b></label>
+      <div class="custom-control custom-radio form-control-lg">
+        <input type="radio" class="custom-control-input" id="dele" 
+          name="deleDela" value="dele" checked>
+        <label id="dele" class="custom-control-label" for="dele">
+          O nome <b>dele</b> é...</label>
+      </div>
+      <div class="custom-control custom-radio form-control-lg">
+        <input type="radio" class="custom-control-input" id="dela" 
+          name="deleDela" value="dela">
+        <label id="dela" class="custom-control-label" for="dela">
+          O nome <b>dela</b> é...</label>
+      </div>
+      <br />
+      <button type="submit" class="btn btn-success">GERAR LIVRO</button>
+    </form>
+  </div>
+  </div>
+
+  <script>
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          else {
+            //alert("navegar");
+            //event.preventDefault();
+            //event.stopPropagation();
+            //window.location.href = 'livro-gerar.html';
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+  </script>
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 <div class="cover">
     <img src="ONomeDaGente/capa.jpg">
 </div>
-<div class="cover">Cover 2</div>
+<div class="cover"></div>
 <div class="page">
     <img src="ONomeDaGente/p01.jpg">
     <div style="position: absolute; 
@@ -11,7 +11,6 @@
             PODERIA SER MIGUEL OU RAFAEL.<br />
             OU QUEM SABE MARIBEL?
         </p>
-        <p class="texto-normal"></p>
     </div>
     <div style="position: absolute; 
     left: 267px; top: 319px; ">
@@ -19,7 +18,6 @@
             MAS É PAPEL E SE ESCREVE <br />
             COM ESTAS LETRAS
         </p>
-        <p class="texto-normal"></p>
     </div>
     <div style="position: absolute; 
     left: 310px; top: 365px; ">
@@ -27,11 +25,97 @@
             P&nbsp;&nbsp;A&nbsp;&nbsp;P&nbsp;&nbsp;E&nbsp;&nbsp;L
         </p>
     </div>
-
 </div>
-<div class="page">Page 4</div>
-<div class="page">Page 5</div>
-<div class="page">Page 6</div>
-<div class="cover">Cover 7</div>
+<div class="page">
+    <img src="ONomeDaGente/p02.jpg">
+    <div style="position: absolute; 
+    left: 40px; top: 0px; ">
+        <p class="texto-normal">
+            HOJE ESTOU UM POUCO TRISTE.<br />
+            SOU UMA FOLHA EM BRANCO, SEM NINGUÉM<br />
+            QUE ME RABISQUE.
+        </p>
+    </div>
+    <div style="position: absolute; 
+    left: 224px; top: 325px; ">
+        <p class="texto-normal">
+            COMO É QUE EU VOU ME EXPRESSAR,<br />
+            SE NEM UMA LETRA OU UM DESENHO<br />
+            EU TENHO PARA MOSTRAR?
+        </p>
+    </div>
+</div>
+<div class="page">
+    <img src="ONomeDaGente/p03.jpg">
+    <div style="position: absolute; 
+        left: 36px; top: 0px; ">
+        <p class="texto-normal">
+            AH! MAS A TRISTEZA UMA HORA PASSA,<br />
+            E SEI QUE A MINHA ALEGRIA VOLTARÁ.
+        </p>
+    </div>
+    <div style="position: absolute; 
+        left: 205px; top: 350px; ">
+        <p class="texto-normal">
+            EI, ESPERE, SINTO ESSE VENTO SOPRAR!<br />
+            E, OPA, NOVOS AMIGOS VOU ENCONTRAR.
+        </p>
+    </div>
+</div>
+<div class="page">
+    <spam id="p04-img"></spam>
+    <script>
+        document.getElementById("p04-img").innerHTML = '<img src="ONomeDaGente/p04' + deleDela + '.jpg">';
+    </script>
+    <div style="position: absolute; 
+            left: 105px; top: 20px; ">
+        <p class="texto-normal">
+            HUMMM, SÃO LÁPIS COLORIDOS. MAS COMO FAZER<br />
+            PARA BRINCAR COM ESSES NOVOS AMIGOS?
+        </p>
+    </div>
+</div>
+<div class="page">
+    <spam id="p05-img"></spam>
+    <script>
+        document.getElementById("p05-img").innerHTML = '<img src="ONomeDaGente/p05' + deleDela + '.jpg">';
+    </script>
+    <div style="position: absolute; 
+                left: 40px; top: 0px; ">
+        <p class="texto-normal">
+            OLHA SÓ QUEM ACABA DE CHEGAR,<br />
+            <spam id="p05-deleDela1"></spam> QUE VEIO ME ENCONTRAR.<br />
+            QUAL SERÁ O NOME <spam id="p05-deleDela2"></spam>?
+            <script>
+                if (deleDela == "dele") {
+                  document.getElementById("p05-deleDela1").innerHTML = "ESSE MENINO";
+                  document.getElementById("p05-deleDela2").innerHTML = "DELE";
+                } else {
+                  document.getElementById("p05-deleDela1").innerHTML = "ESSA MENINA";
+                  document.getElementById("p05-deleDela2").innerHTML = "DELA";
+                }
+            </script>
+        </p>
+    </div>
+    <div style="position: absolute; 
+        left: 210px; top: 340px; ">
+        <p class="texto-normal">
+            QUERIA TANTO SABER!<br />
+        </p>
+    </div>
+    <div style="position: absolute; 
+                left: 190px; top: 365px; ">
+        <p class="texto-normal">
+            SERÁ QUE <spam id="p05-deleDela3"></spam> VAI ESCREVER?
+            <script>
+                if (deleDela == "dele") {
+                  document.getElementById("p05-deleDela3").innerHTML = "ELE";
+                } else {
+                  document.getElementById("p05-deleDela3").innerHTML = "ELA";
+                }
+            </script>
+        </p>
+    </div>
+</div>
 <div class="cover">Cover 8</div>
 <!-- end content setup -->
