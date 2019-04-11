@@ -21,6 +21,7 @@
 	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 	<script type="text/javascript" src="js/pageflip5-min.js"></script>
 	<script type="text/javascript" src="js/key.js"></script>
+	<script type="text/javascript" src="js/lib.js"></script>
 	<!-- end needed js libraries -->
 
 </head>
@@ -28,39 +29,8 @@
 <body>
 
 	<script>
-		function escapeRegExp(str) {
-    return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
-}
-				function replaceAll(str, find, replace) {
-					return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
-				}
-			function getQueryString() {
-				var key = false, res = {}, itm = null;
-				// get the query string without the ?
-				var qs = location.search.substring(1);
-				qs = replaceAll(qs,"+", "%20");
-				// check for the key as an argument
-				if (arguments.length > 0 && arguments[0].length > 1)
-					key = arguments[0];
-				// make a regex pattern to grab key/value
-				var pattern = /([^&=]+)=([^&]*)/g;
-				// loop the items in the query string, either
-				// find a match to the argument, or build an object
-				// with key/value pairs
-				while (itm = pattern.exec(qs)) {
-					if (key !== false && decodeURIComponent(itm[1]) === key)
-						return decodeURIComponent(itm[2]);
-					else if (key === false)
-						res[decodeURIComponent(itm[1])] = decodeURIComponent(itm[2]);
-				}
-
-				return key === false ? res : null;
-			}
-		
 		var url_string = window.location.href;
-		//var url = new URLSearchParams(url_string);
 			
-		//var nameUP = url.get("nome");
 		var nameUP = getQueryString("nome");
 		if (nameUP== null || nameUP == "") nameUP = "JULIA";
 		else {
@@ -76,7 +46,6 @@
 			nameLC = nameLC + nameArray[i].charAt(0).toUpperCase() + nameArray[i].substr(1).toLowerCase() + " ";
 		}
 
-		//var deleDela = url.get("deleDela");
 		var deleDela = getQueryString("deleDela");
 		if (deleDela == null || deleDela == "") deleDela = "dela";
 		else deleDela = deleDela.toLowerCase();
