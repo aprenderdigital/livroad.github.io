@@ -38,7 +38,7 @@
 				var key = false, res = {}, itm = null;
 				// get the query string without the ?
 				var qs = location.search.substring(1);
-				qs = replaceAll(qs,"+", "&nbsp;");
+				qs = replaceAll(qs,"+", "%20");
 				// check for the key as an argument
 				if (arguments.length > 0 && arguments[0].length > 1)
 					key = arguments[0];
