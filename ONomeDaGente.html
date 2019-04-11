@@ -47,7 +47,7 @@
 			nameLC = nameLC + nameArray[i].charAt(0).toUpperCase() + nameArray[i].substr(1).toLowerCase() + " ";
 		}
 
-		var deleDela = url.searchParams.get("deleDela");
+		var deleDela = url.get("deleDela");
 		if (deleDela == null || deleDela == "") deleDela = "dela";
 		else deleDela = deleDela.toLowerCase();
 		deleDela = deleDela.replace(/</g, "&lt;").replace(/>/g, "&gt;");
