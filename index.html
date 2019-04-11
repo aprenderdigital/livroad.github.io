@@ -11,9 +11,8 @@
 
   <script>
     function DefineNome(input) {
-      document.getElementById("dele").innerHTML = "O nome <b>dele</b> é " + input.value + ".";
-      document.getElementById("dela").innerHTML = "O nome <b>dela</b> é " + input.value + ".";
-      alert("define nome");
+      document.getElementById("deleLabel").innerHTML = "O nome <b>dele</b> é " + input.value + ".";
+      document.getElementById("delaLabel").innerHTML = "O nome <b>dela</b> é " + input.value + ".";
     }
   </script>
 </head>
@@ -40,12 +39,12 @@
             <label for="frase"><b>Escolha a frase</b></label>
             <div class="custom-control custom-radio form-control-lg">
               <input type="radio" class="custom-control-input" id="dele" name="deleDela" value="dele" checked>
-              <label id="dele" class="custom-control-label" for="dele">
+              <label id="deleLabel" class="custom-control-label" for="dele">
                 O nome <b>dele</b> é...</label>
             </div>
             <div class="custom-control custom-radio form-control-lg">
               <input type="radio" class="custom-control-input" id="dela" name="deleDela" value="dela">
-              <label id="dela" class="custom-control-label" for="dela">
+              <label id="delaLabel" class="custom-control-label" for="dela">
                 O nome <b>dela</b> é...</label>
             </div>
             <br />
