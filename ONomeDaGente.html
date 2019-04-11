@@ -8,6 +8,8 @@
 
 	<!-- start custom fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 	<!-- end custom fonts -->
 
 	<!-- start needed css style files -->
@@ -28,8 +30,25 @@
 	<script>
 		var url_string = window.location.href;
 		var url = new URL(url_string);
-		var nome = url.searchParams.get("nome");
+		
+		var nameUP = url.searchParams.get("nome");
+		if (nameUP== null || nameUP == "") nameUP = "JULIA";
+		else {
+			if (nameUP.length > 15) {
+				nameUP = nameUP.substring(0,15);
+			}
+			nameUP = nameUP.toUpperCase();
+		}
+		//Name using upper + lower
+		var nameArray = nameUP.split(" ");
+		var nameLC = "";
+		for (i = 0; i < nameArray.length; ++i) {
+			nameLC = nameLC + nameArray[i].charAt(0).toUpperCase() + nameArray[i].substr(1).toLowerCase() + " ";
+		}
+
 		var deleDela = url.searchParams.get("deleDela");
+		if (deleDela == null || deleDela == "") deleDela = "dela";
+		else deleDela = deleDela.toLowerCase();
 		deleDela = deleDela.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 	</script>
 
