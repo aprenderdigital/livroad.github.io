@@ -30,7 +30,10 @@
   <br />
   <div class="container">
     <div class="row">
-      <div class="col">
+      <div class="col-sm-4">
+          <img src="ONomeDaGente/capa.jpg" class="img-fluid img-thumbnail">
+      </div>
+      <div class="col-sm-8">
         <div class="bd-example">
           <form class="needs-validation" novalidate action="ONomeDaGente.html#book/page/1" method="GET">
             <div class="form-group">
@@ -44,19 +47,19 @@
                 Sugerimos usar o nome sem o sobrenome. Por exemplo: Julia, Ana Cl&aacute;udia, Felipe.
               </small>
             </div>
-            <br />
-            <label for="frase"><b>Escolha a frase</b></label>
-            <div class="custom-control custom-radio form-control-lg">
-              <input type="radio" class="custom-control-input" id="dele" name="deleDela" value="dele" checked>
-              <label id="deleLabel" class="custom-control-label" for="dele">
-                O nome <b>dele</b> é...</label>
+            <div class="form-group">
+              <label for="frase"><b>Escolha a frase</b></label>
+              <div class="custom-control custom-radio form-control-lg">
+                <input type="radio" class="custom-control-input" id="dele" name="deleDela" value="dele" checked>
+                <label id="deleLabel" class="custom-control-label" for="dele">
+                  O nome <b>dele</b> é...</label>
+              </div>
+              <div class="custom-control custom-radio form-control-lg">
+                <input type="radio" class="custom-control-input" id="dela" name="deleDela" value="dela">
+                <label id="delaLabel" class="custom-control-label" for="dela">
+                  O nome <b>dela</b> é...</label>
+              </div>
             </div>
-            <div class="custom-control custom-radio form-control-lg">
-              <input type="radio" class="custom-control-input" id="dela" name="deleDela" value="dela">
-              <label id="delaLabel" class="custom-control-label" for="dela">
-                O nome <b>dela</b> é...</label>
-            </div>
-            <br />
             <button type="submit" class="btn btn-success">GERAR LIVRO</button>
           </form>
         </div>
