@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+	<title>Livro Personalizado O Nome da Gente</title>
+
+	<!-- start custom fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+	<!-- end custom fonts -->
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-64612385-7"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'UA-64612385-7');
+	</script>
+
+	<!-- start needed css style files -->
+	<link type="text/css" rel="stylesheet" href="css/pageflip.css">
+	<link type="text/css" rel="stylesheet" href="ONomeDaGente/ONomeDaGente.css">
+	<!-- end needed css style files -->
+
+	<!-- start needed js libraries -->
+	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+	<script type="text/javascript" src="js/pageflip5-min.js"></script>
+	<script type="text/javascript" src="js/key.js"></script>
+	<script type="text/javascript" src="js/lib.js"></script>
+	<!-- end needed js libraries -->
+
+</head>
+
+<body>
+	<script>
+		var url_string = window.location.href;
+			
+		var nameUP = getQueryString("nome");
+		if (nameUP== null || nameUP == "") nameUP = "JULIA";
+		else {
+			if (nameUP.length > 15) {
+				nameUP = nameUP.substring(0,15);
+			}
+			nameUP = nameUP.toUpperCase();
+		}
+		//Name using upper + lower
+		var nameArray = nameUP.split(" ");
+		var nameLC = "";
+		for (i = 0; i < nameArray.length; ++i) {
+			nameLC = nameLC + nameArray[i].charAt(0).toUpperCase() + nameArray[i].substr(1).toLowerCase() + " ";
+		}
+
+		var deleDela = getQueryString("deleDela");
+		if (deleDela == null || deleDela == "") deleDela = "dela";
+		else deleDela = deleDela.toLowerCase();
+		deleDela = deleDela.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+		//var xhr = new XMLHttpRequest();
+		//xhr.open("GET", "https://script.google.com/macros/s/AKfycbwTrA-fBbGU4gkovnVnueSeAnIvXLy0Q30lyw4yl45ye1YaFRd8/exec?&livro=ONomeDaGente&nome="+nameLC+"&genero="+deleDela, true); 
+		//xhr.send(null);
+	</script>
+
+	<!-- start embed pageflip -->
+	<div id="pageflip"></div>
+	<!-- end embed pageflip -->
+
+	<!-- start script needed to run pageflip -->
+	<script type="text/javascript">
+		var $pageflip = $('#pageflip');
+
+		/* Initialize & Start Pageflip 5 */
+		$pageflip.pageflipInit({
+			/* Configuration options */
+			PageDataFile: "ONomeDaGente/book.html",
+			PageWidth: 500,
+			PageHeight: 435,
+			FullScreenEnabled: true,
+			Margin: 34,
+			MarginBottom: 64,
+			AutoScale: true,
+			AutoStageHeight: true,
+			StartPage: 1,
+			AutoFlipLoop: -1,
+			ControlbarFile: "common/controlbar_svg.html",
+			ControlbarToFront: true,
+			HashControl: true,
+			ShareLink: "http://pageflip-books.com",
+			ShareText: "Pageflip5, The Book Template for the Web",
+			ShareVia: "@MaccPageFlip",
+			ShareImageURL: "http://pageflip-books.com/images/shareimage2.jpg",
+			Copyright: Key.Copyright,
+			Key: Key.Key
+			/* book ID - used as CSS class name */
+		}, "book");
+
+	</script>
+	<!-- end script needed to run pageflip -->
+	<div class="pageflip-credits">Powered by <a href="http://pageflip-books.com" target="_blank">Pageflip 5</a></div>
+</body>
+
+</html>
