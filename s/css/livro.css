@@ -1,0 +1,21 @@
+.texto-apresenta {
+  background: white;
+  font-size: 21px;
+  color: dimgray;
+  padding: 2rem;
+}
+.texto-final {
+  background: lightgoldenrodyellow;  
+  font-size: 21px;
+  color: dimgray;
+  padding: 2rem;
+}
+.texto-apresenta-menor {
+  background: white;
+  font-size: 14px;
+  padding: 2rem;
+}
+
+.cor {
+  color: orange;
+}
