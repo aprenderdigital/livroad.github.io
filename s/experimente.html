@@ -1,0 +1,118 @@
+<html lang="pt" xml:lang="pt" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Um presente do Dia Nacional do Livro Infantil</title>
+  <meta property="og:url"           content="https://dnli.aprender.digital/s/experimente.html" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Um presente do Dia Nacional do Livro Infantil" />
+  <meta property="og:description"   content="Vamos aproveitar esta data e incentivar a leitura?" />
+  <meta property="og:image"         content="https://livros.aprender.digital/s/ONomeDaGente/dnli.jpg" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/form.css">  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64612385-7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-64612385-7');
+  </script>
+
+  <script>
+    function DefineNome(input) {
+      document.getElementById("deleLabel").innerHTML = "O nome <b>dele</b> é " + input.value + ".";
+      document.getElementById("delaLabel").innerHTML = "O nome <b>dela</b> é " + input.value + ".";
+    }
+  </script>
+</head>
+
+<body>
+  <br />
+  <div class="container">
+    <div class="row">
+      <div class="bd-example">
+        <form class="needs-validation" novalidate action="ONomeDaGente.html#book/page/1" method="GET">
+          <p style="color:orange; font-size:18px"><b>Quer conhecer como funciona o livro digital personalizado que você vai poder enviar para os seus alunos?</b></p>
+          <p>Então, preencha os dados abaixo.</p>
+          <div class="form-group">
+            <label for="de"><b>Seu nome</b></label>
+            <input type="de" class="form-control form-control-lg" placeholder="Digite aqui o seu nome" maxlength="25" required
+              id="formde" name="de">
+            <div class="invalid-feedback">
+              Escreva aqui o seu nome.
+            </div>
+            <small id="nomeProfHelp" class="form-text text-muted">
+              Você pode usar até 25 letras. Se não couber, use alguma abreviação. Por exemplo: Prof. Ana Julia.
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="nome"><b>Nome criança</b></label>
+            <input type="nome" class="form-control form-control-lg" placeholder="Digite aqui o nome da criança" maxlength="15" required
+              id="formNome" name="nome" onkeyup=DefineNome(this)>
+            <div class="invalid-feedback">
+              Escreva aqui o nome da criança que vai receber o livro.
+            </div>
+            <small id="nomeHelp" class="form-text text-muted">
+              Aqui você você escreve o nome da criança que vai receber o livro. 
+              Use no m&aacute;ximo 15 letras.
+              Sugerimos usar o nome sem o sobrenome. Por exemplo: Julia, Ana Cl&aacute;udia, Felipe.
+            </small>
+          </div>
+          <div class="form-group">
+            <label for="frase"><b>Escolha a frase abaixo de acordo com a criança que vai receber o livro</b></label>
+            <div class="custom-control custom-radio form-control-lg">
+              <input type="radio" class="custom-control-input" id="dele" name="deleDela" value="dele" required>
+              <label id="deleLabel" class="custom-control-label" for="dele">
+                O nome <b>dele</b> é...</label>
+            </div>
+            <div class="custom-control custom-radio form-control-lg">
+              <input type="radio" class="custom-control-input" id="dela" name="deleDela" value="dela" required>
+              <label id="delaLabel" class="custom-control-label" for="dela">
+                O nome <b>dela</b> é...</label>
+                <div class="invalid-feedback">
+                  Não deixe de escolher uma das frases acima.
+                </div>
+            </div>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-success">GERAR LIVRO DE EXEMPLO</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          else {
+            //alert("navegar");
+            //event.preventDefault();
+            //event.stopPropagation();
+            //window.location.href = 'livro-gerar.html';
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+  </script>
+</body>
+
+</html>

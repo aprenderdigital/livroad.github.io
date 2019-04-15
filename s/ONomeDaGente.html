@@ -63,6 +63,24 @@
 			nameLC = nameLC + nameArray[i].charAt(0).toUpperCase() + nameArray[i].substr(1).toLowerCase() + " ";
 		}
 
+		var deUP = getQueryString("de");
+		if (deUP == null || deUP == "") {
+			deUP = "A equipe DNLI";
+			deLC = "A equipe DNLI";
+		}
+		else {
+			if (deUP.length > 25) {
+				deUP = deUP.substring(0,25);
+			}
+			deUP = deUP.toUpperCase();
+			//Name using upper + lower
+			var nameDeArray = deUP.split(" ");
+			var deLC = "";
+			for (i = 0; i < nameDeArray.length; ++i) {
+				deLC = deLC + nameDeArray[i].charAt(0).toUpperCase() + nameDeArray[i].substr(1).toLowerCase() + " ";
+			}
+		}
+
 		var deleDela = getQueryString("deleDela");
 		if (deleDela == null || deleDela == "") deleDela = "dela";
 		else deleDela = deleDela.toLowerCase();
