@@ -8,3 +8,11 @@
       border: solid #f7f7f9;
   }
 }
+@media (max-width: 575px) {
+  .bd-example {
+      position: relative;
+      padding: 1.5rem;
+      margin-right: 0;
+      margin-left: 0;
+  }
+}
