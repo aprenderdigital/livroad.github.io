@@ -15,6 +15,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" type="text/css" href="css/form.css">  
+  <script type="text/javascript" src="js/lib.js"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64612385-7"></script>
@@ -26,6 +27,11 @@
   </script>
 
   <script>
+		var url_string = window.location.href;
+    var linkOuBotao = "botao";
+    var linkOuBotao = getQueryString("op");
+    if (linkOuBotao == null || linkOuBotao == "" || linkOuBotao != "link" ) linkOuBotao = "botao";
+
     function DefineNome(input) {
       document.getElementById("deleLabel").innerHTML = "O nome <b>dele</b> é " + input.value + ".";
       document.getElementById("delaLabel").innerHTML = "O nome <b>dela</b> é " + input.value + ".";
@@ -38,7 +44,13 @@
   <div class="container">
     <div class="row">
       <div class="bd-example">
-        <form class="needs-validation" novalidate action="ONomeDaGente.html#book/page/1" method="GET">
+        <form id="formLivro" class="needs-validation" novalidate action="ONomeDaGente.html#book/page/1" method="GET">
+        <script>
+          if (linkOuBotao == "link") {
+            document.getElementById("formLivro").action = 'resposta.html';
+          }
+        </script>
+  
           <p style="color:orange; font-size:18px"><b>Quer conhecer como funciona o livro digital personalizado que você vai poder enviar para os seus alunos?</b></p>
           <p>Então, preencha os dados abaixo.</p>
           <div class="form-group">

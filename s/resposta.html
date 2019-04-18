@@ -1,0 +1,117 @@
+<html lang="pt" xml:lang="pt" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Um presente do Dia Nacional do Livro Infantil</title>
+  <meta property="og:url"           content="https://dnli.aprender.digital/s/experimente.html" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Um presente do Dia Nacional do Livro Infantil" />
+  <meta property="og:description"   content="Vamos aproveitar esta data e incentivar a leitura?" />
+  <meta property="og:image"         content="https://livros.aprender.digital/s/ONomeDaGente/dnli.jpg" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/form.css">  
+  <script type="text/javascript" src="js/lib.js"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-64612385-7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-64612385-7');
+  </script>
+
+  <script>
+		var url_string = window.location.href;
+    var urlSplit = url_string.split('?');
+    var url1 = urlSplit[0];
+    var url2 = urlSplit[1];
+    if (url2 == null || url2 == "") window.location.href = "experimente.html?op=link";
+
+    var urlFinal = 'https://livros.aprender.digital/s/ONomeDaGente.html?' + url2;
+
+
+    var nameUP = getQueryString("nome");
+		if (nameUP== null || nameUP == "") nameUP = "JULIA";
+		else {
+			if (nameUP.length > 15) {
+				nameUP = nameUP.substring(0,15);
+			}
+			nameUP = nameUP.toUpperCase();
+		}
+		//Name using upper + lower
+		var nameArray = nameUP.split(" ");
+		var nameLC = "";
+		for (i = 0; i < nameArray.length; ++i) {
+			nameLC = nameLC + nameArray[i].charAt(0).toUpperCase() + nameArray[i].substr(1).toLowerCase() + " ";
+		}
+
+		var deleDela = getQueryString("deleDela");
+		if (deleDela == null || deleDela == "") deleDela = "dela";
+		else deleDela = deleDela.toLowerCase();
+		deleDela = deleDela.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+  </script>
+</head>
+
+<body>
+  <br />
+  <div class="container">
+    <div class="row">
+      <div class="bd-example">
+        <p>
+          OK! O livro <spam id="nome"></spam> foi gerado! 😊
+        </p>
+        <p>
+          Para acessar o livro, escolha um dos botões abaixo:
+        </p>
+      
+        <p><button type="link" class="btn btn-primary" onclick="window.open(urlFinal,'_blank')()">
+          Abrir o livro em uma nova janela
+        </button></p>
+        <p><button type="link" class="btn btn-warning" onclick="CopyToClipboard()">
+          Copiar o link de acesso ao livro
+        </button></p>
+        <p><button type="link" class="btn btn-success" onclick="EnviarWhatsApp()">
+          Enviar livro pelo WhatsApp
+        </button></p>
+      
+        <script>
+          if (deleDela == "dela")
+            document.getElementById("nome").innerHTML = "da " + nameLC;
+          else
+            document.getElementById("nome").innerHTML = "do " + nameLC;
+
+        </script>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+    function CopyToClipboard() {
+      var el = document.createElement('textarea');
+      alert("OK! Agora você pode colar o link do livro no aplicativo que quiser.");
+      el.value = urlFinal;
+      el.setAttribute('readonly', '');
+      el.style.position = 'absolute';
+      el.style.left = '-9999px';
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+    }
+
+    function EnviarWhatsApp() {
+      var le = encodeURIComponent('Feliz Dia Nacional do Livro Infantil :) \r\n\r\n ' + urlFinal);
+
+      window.open("https://api.whatsapp.com/send?text=" + le,'_blank');
+
+    }
+</script>
+</html>
