@@ -96,7 +96,6 @@
 <script>
     function CopyToClipboard() {
       var el = document.createElement('textarea');
-      alert("OK! Agora você pode colar o link do livro no aplicativo que quiser.");
       el.value = urlFinal;
       el.setAttribute('readonly', '');
       el.style.position = 'absolute';
@@ -105,6 +104,8 @@
       el.select();
       document.execCommand('copy');
       document.body.removeChild(el);
+      alert("OK! Agora você pode colar o link do livro no aplicativo que quiser.");
+
     }
 
     function EnviarWhatsApp() {
