@@ -24,6 +24,25 @@
       document.getElementById("delaLabel").innerHTML = "O nome <b>dela</b> é " + input.value + ".";
     }
   </script>
+
+<script type="text/javascript">
+	
+	window.theCallData = ""
+	window.addEventListener('message', function(theEvent) {
+     
+    if (theEvent.data[0]=== 'expand'){
+      window.theCallData = theEvent.data[1];
+      expand();
+    }
+    
+  }, false);
+    
+  function expand() {
+    var dt = new Date();
+    alert(window.theCallData +  dt  );
+}
+</script>
+
 </head>
 
 <body>
