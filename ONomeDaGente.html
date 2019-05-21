@@ -36,6 +36,26 @@
 </head>
 
 <body>
+
+	<script type="text/javascript">
+		window.theCallData = ""
+		window.addEventListener('message', function (theEvent) {
+
+			if (theEvent.data[0] === 'expand') {
+				window.theCallData = theEvent.data[1];
+				expand();
+			}
+
+		}, false);
+
+		function expand() {
+			//alert(window.theCallData);
+			var link = window.location.href;
+			console.log(window.location.href);
+			//window.open(link, "_blank");
+		}
+	</script>
+
 	<script>
 		var url_string = window.location.href;
 			
