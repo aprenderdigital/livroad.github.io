@@ -38,8 +38,10 @@
   }, false);
     
   function expand() {
-    var dt = new Date();
-    alert(window.theCallData +  dt  );
+    //alert(window.theCallData);
+    var link = window.location.href;
+    console.log(window.location.href); 
+    window.open(link, "_blank");
 }
 </script>
 
