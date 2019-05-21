@@ -43,6 +43,7 @@
 
 			if (theEvent.data[0] === 'expand') {
 				window.theCallData = theEvent.data[1];
+				console.log("Origem do evento:", theEvent.origin);
 				expand();
 			}
 
@@ -52,7 +53,7 @@
 			//alert(window.theCallData);
 			var link = window.location.href;
 			console.log(window.location.href);
-			window.parent.contentWindow.postMessage(['openUrl', link], '*');
+			window.parent.postMessage(['openUrl', link], '*');
 			//window.open(link, "_blank");
 		}
 	</script>
