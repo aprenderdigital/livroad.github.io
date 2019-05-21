@@ -38,11 +38,12 @@
   }, false);
     
   function expand() {
-    //alert(window.theCallData);
-    var link = window.location.href;
-    console.log(window.location.href); 
-    //window.open(link, "_blank");
-}
+			//alert(window.theCallData);
+			var link = window.location.href;
+			console.log(window.location.href);
+			window.parent.postMessage(['openUrl', link], '*');
+    }
+    
 </script>
 
 </head>
