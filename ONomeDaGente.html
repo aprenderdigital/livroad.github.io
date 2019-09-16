@@ -78,7 +78,8 @@
 		  //tira a paginação do link obtido #book/page/10-11
 		  var posHash = urlFinal.indexOf("#")
 		  if (posHash>0)
-		  	urlFinal = urlFinal.substring(0, posHash);
+			urlFinal = urlFinal.substring(0, posHash);
+		  urlFinal.replace("fid", "xid");	  
 
 		
 		var nameUP = getQueryString("nome");
@@ -101,8 +102,17 @@
 		else deleDela = deleDela.toLowerCase();
 		deleDela = deleDela.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
+		var fid = getQueryString("fid");
+		if (fid !== null) {
+			fid = "&fid=" + fid;
+		}
+		else {
+			fid = "&fid=0";
+		}
+
+		console.log("fid=", fid);
 		var xhr = new XMLHttpRequest();
-		xhr.open("GET", "https://script.google.com/macros/s/AKfycbwTrA-fBbGU4gkovnVnueSeAnIvXLy0Q30lyw4yl45ye1YaFRd8/exec?&livro=ONomeDaGente&nome="+nameLC+"&genero="+deleDela, true); 
+		xhr.open("GET", "https://script.google.com/macros/s/AKfycbwTrA-fBbGU4gkovnVnueSeAnIvXLy0Q30lyw4yl45ye1YaFRd8/exec?&livro=ONomeDaGente&nome="+nameLC+"&genero="+deleDela+fid, true); 
 		xhr.send(null);
 	</script>
 
