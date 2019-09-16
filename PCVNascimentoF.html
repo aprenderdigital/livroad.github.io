@@ -4,18 +4,21 @@
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-	<title>Livro Personalizado - O Nome da Gente</title>
+	<title>Livro Personalizado - Poesias colhidas do vento</title>
 
 	<meta property="og:type"          content="website" />
-	<meta property="og:title"         content="O Nome da Gente" />
-	<meta property="og:description"   content="Livro digital personalizado O Nome da Gente." />
-	<meta property="og:image"         content="https://livros.aprender.digital/ONomeDaGente/capa.jpg" />
+	<meta property="og:title"         content="Poesias Colhidas do Vento" />
+	<meta property="og:description"   content="Livro digital personalizado Poesias Colhidas do Vento." />
+	<meta property="og:image"         content="https://livros.aprender.digital/PCVNascimento/capa.jpg" />
 
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<!-- start custom fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	<!-- end custom fonts -->
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -28,11 +31,8 @@
 	</script>
 
 	<!-- start needed css style files -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link type="text/css" rel="stylesheet" href="css/pageflip.css">
-	<link type="text/css" rel="stylesheet" href="css/livro.css">
-	<link type="text/css" rel="stylesheet" href="ONomeDaGente/ONomeDaGente.css">
+	<link type="text/css" rel="stylesheet" href="/PCVNascimento/nascimento.css">
 	<!-- end needed css style files -->
 
 	<!-- start needed js libraries -->
@@ -66,46 +66,6 @@
 		}
 	</script>
 
-	<script>
-		var url_string = window.location.href;
-		
-		//Usado para o compartilhamento do livro
-		  var urlSplit = url_string.split('?');
-    	  var url1 = urlSplit[0];
-    	  var url2 = urlSplit[1];
-    	  if (url2 == null || url2 == "") window.location.href = "experimente.html?op=link";
-		  var urlFinal = 'https://livros.aprender.digital/ONomeDaGente.html?' + url2;
-		  //tira a paginação do link obtido #book/page/10-11
-		  var posHash = urlFinal.indexOf("#")
-		  if (posHash>0)
-		  	urlFinal = urlFinal.substring(0, posHash);
-
-		
-		var nameUP = getQueryString("nome");
-		if (nameUP== null || nameUP == "") nameUP = "JULIA";
-		else {
-			if (nameUP.length > 15) {
-				nameUP = nameUP.substring(0,15);
-			}
-			nameUP = nameUP.toUpperCase();
-		}
-		//Name using upper + lower
-		var nameArray = nameUP.split(" ");
-		var nameLC = "";
-		for (i = 0; i < nameArray.length; ++i) {
-			nameLC = nameLC + nameArray[i].charAt(0).toUpperCase() + nameArray[i].substr(1).toLowerCase() + " ";
-		}
-
-		var deleDela = getQueryString("deleDela");
-		if (deleDela == null || deleDela == "") deleDela = "dela";
-		else deleDela = deleDela.toLowerCase();
-		deleDela = deleDela.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-
-		var xhr = new XMLHttpRequest();
-		xhr.open("GET", "https://script.google.com/macros/s/AKfycbwTrA-fBbGU4gkovnVnueSeAnIvXLy0Q30lyw4yl45ye1YaFRd8/exec?&livro=ONomeDaGente&nome="+nameLC+"&genero="+deleDela, true); 
-		xhr.send(null);
-	</script>
-
 	<!-- start embed pageflip -->
 	<div id="pageflip"></div>
 	<!-- end embed pageflip -->
@@ -113,13 +73,25 @@
 	<!-- start script needed to run pageflip -->
 	<script type="text/javascript">
 		var $pageflip = $('#pageflip');
+		var pageflipContext = $pageflip.pageflip();
+		var EventCallBackObject = {
+			onTop: function( PN ) {
+					if (PN === 5) {
+						//document.getElementById('nascimentoInput').focus();
+					}
+					else if (PN === 7) {
+						//document.getElementById('nomeInput').focus();
+					}
+			}
+		}
+		pageflipContext.setPFEventCallBack( EventCallBackObject );
 
 		/* Initialize & Start Pageflip 5 */
 		$pageflip.pageflipInit({
 			/* Configuration options */
-			PageDataFile: "ONomeDaGente/book.html",
-			PageWidth: 500,
-			PageHeight: 435,
+			PageDataFile: "PCVNascimento/bookF.html",
+			PageWidth: 545,
+			PageHeight: 800,
 			FullScreenEnabled: true,
 			Margin: 34,
 			MarginBottom: 64,
@@ -127,9 +99,10 @@
 			AutoStageHeight: true,
 			StartPage: 1,
 			AutoFlipLoop: -1,
+			CenterSinglePage: true,
 			ControlbarFile: "common/controlbar_svg.html",
 			ControlbarToFront: true,
-			HashControl: true,
+			HashControl: true, //false,
 			ShareLink: "http://pageflip-books.com",
 			ShareText: "Pageflip5, The Book Template for the Web",
 			ShareVia: "@MaccPageFlip",
@@ -142,7 +115,6 @@
 	</script>
 	<!-- end script needed to run pageflip -->
 	<div class="pageflip-credits">Powered by <a href="http://pageflip-books.com" target="_blank">Pageflip 5</a></div>
-	
 </body>
 
 </html>

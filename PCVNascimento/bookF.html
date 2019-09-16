@@ -1,0 +1,190 @@
+<div class="cover">
+    <img src="PCVNascimento/capa.jpg">
+</div>
+<div class="page">
+    <img src="PCVNascimento/capa-verso.jpg">
+</div>
+<div class="page">
+    <img src="PCVNascimento/nascimento.jpg">
+    <div style="position: absolute; 
+    left: 1px; top: 110px; width: 545px">
+        <p class="texto-normal-centralizado">
+            Quando o Sol nasce<br />
+            Parece que ele está dizendo:<br />
+            Se abra pra vida!
+        </p>
+    </div>
+</div>
+<div class="page">
+    <img src="PCVNascimento/pg6-bk.jpg">
+    <div style="position: absolute; 
+    left: 38px; top: 470px; ">
+        <p class="texto-instrucao">
+            E <b>VOCÊ?</b><br />
+        </p>
+        <p class="texto-instrucao">
+            O QUE <b>PENSA</b> QUE O SOL PODE<br />
+            ESTAR <b>DIZENDO</b>?<br />
+        </p>
+        <p class="texto-instrucao">
+            <b>CONTE</b> PARA NÓS USANDO<br />
+            A <b>PRÓXIMA</b> PÁGINA!<br />
+        </p>
+        <p>
+            <span style='font-size:40px;'>&#128522;</span>
+        </p>
+    </div>
+</div>
+<script>
+var nascimentoInputDefault = "Escreva aqui o que você pensa que o Sol pode estar dizendo."
+
+function onFocusNascimentoInput() {
+    console.log("onFocusNascimentoInput");
+    var nascimentoInput = document.getElementById("nascimentoInput");
+    var nascimentoPersonalizado = document.getElementById("nascimentoPersonalizado");
+    var buttonEditNascimento = document.getElementById("buttonEditNascimento");
+
+    buttonEditNascimento.style.display = "";
+    nascimentoInput.style.display = "";
+
+    if (nascimentoInput.value == nascimentoInputDefault)
+        nascimentoInput.select();
+}
+
+var nomeInputDefault = "Digite aqui o seu nome...";
+
+function onFocusNomeInput() {
+    console.log("onFocusNomeInput");
+    var nomeInput = document.getElementById("nomeInput");
+
+    if (nomeInput.value == nomeInputDefault)
+        nomeInput.select();
+}
+
+
+function onFocusOutNascimentoInput() {
+    console.log("onFocusOutNascimentoInput");
+
+    var nascimentoInput = document.getElementById("nascimentoInput");
+    var nascimentoPersonalizado = document.getElementById("nascimentoPersonalizado");
+    var buttonEditNascimento = document.getElementById("buttonEditNascimento");
+
+    nascimentoInput.style.display = "none";
+    nascimentoPersonalizado.innerHTML = nascimentoInput.value;
+    nascimentoPersonalizado.style.display = "";
+    buttonEditNascimento.style.display = "";
+
+} 
+
+function onClickEditNascimento() {
+    console.log("onClickEditNascimento");
+    var nascimentoInput = document.getElementById("nascimentoInput");
+    var nascimentoPersonalizado = document.getElementById("nascimentoPersonalizado");
+    var buttonEditNascimento = document.getElementById("buttonEditNascimento");
+
+    nascimentoInput.style.display = "";
+    nascimentoPersonalizado.style.display = "none";
+    buttonEditNascimento.style.display = "none";
+
+    nascimentoInput.focus();
+}
+</script>
+<div class="page" data-unload="false">
+    <img src="PCVNascimento/nascimento-delete.jpg">
+    <div style="position: absolute; 
+    left: 40px; top: 110px; width: 455px">
+        <p class="texto-normal-centralizado">
+            Quando o Sol nasce<br />
+            Parece que ele está dizendo:<br />
+            <spam id="nascimentoPersonalizado"></spam><br />
+        </p>
+        <center>
+            <button id="buttonEditNascimento" type="button" onclick="onClickEditNascimento()">Alterar texto</button>
+        </center>
+    </div>
+    <div style="position: absolute; 
+    left: 40px; top: 195px; width: 455px">
+        <textarea id="nascimentoInput" class="pf-activecontent" onfocus="onFocusNascimentoInput()" maxlength="150"
+        onfocusout="onFocusOutNascimentoInput()">Escreva aqui o que você pensa que o Sol pode estar dizendo.</textarea>
+        <script>document.getElementById("nascimentoInput").value = nascimentoInputDefault;</script>
+    </div>
+</div>
+<div class="page">
+    <img src="PCVNascimento/pag34.jpg">
+    <div style="position: absolute; 
+    left: 70px; top: 25px; width: 435px">
+        <p class="texto-instrucao-bk-escuro">
+            ESTOU MUITO FELIZ QUE VOCÊ PARTICIPOU DA REESCRITA DESTE POEMA COMIGO.<br />
+            QUE TAL <b>COMPARTILHÁ-LO</b>?
+        </p>
+    </div>
+</div>
+<div class="page" data-unload="false">
+    <img src="PCVNascimento/pag22.jpg">
+    <div style="position: absolute; 
+    left: 70px; top: 25px; width: 435px">
+        <p class="texto-instrucao">
+            ENTÃO, ESCREVA O <b>SEU NOME</b> ABAIXO E DEIXE QUE O VENTO DISTRIBUA A <b>SUA</b> MENSAGEM!  <span style='font-size:20px;'>😉</span>
+        </p>
+    </div>
+    <div style="position: absolute; 
+    left: 220px; top: 190px; width: 280px">
+        <input class="pf-activecontent" type="text" id="nomeInput" maxlength="40" onfocus="onFocusNomeInput()">
+        <script>document.getElementById("nomeInput").value = nomeInputDefault;</script>
+    </div>
+    <div style="position: absolute; 
+        left: 220px; top: 260px; width: 280px">
+        <p><button type="link" class="btn btn-primary shadow" onclick="window.open(urlFinal(),'_blank')()">
+            Abrir o poema em uma nova janela
+        </button></p>
+        <p><button type="link" class="btn btn-warning shadow" onclick="CopyToClipboard()">
+            Copiar o link de acesso ao poema
+        </button></p>
+        <p><button type="link" class="btn btn-success shadow" onclick="EnviarWhatsApp()">
+            Enviar o poema pelo WhatsApp
+        </button></p>
+    </div>
+</div>
+<div class="cover">
+        <img src="PCVNascimento/sobre-autora.jpg">
+</div>
+
+<script>
+  function urlFinal() {
+    var url;
+    nomeInput = document.getElementById("nomeInput").value;
+    nascimentoInput = document.getElementById("nascimentoInput").value;
+
+    if (nomeInput == nomeInputDefault) nomeInput = "";
+    if (nascimentoInput == nascimentoInputDefault) nascimentoInput = "";
+
+    url = 'https://livros.aprender.digital/PCVNascimento.html?';
+    url = url + "nome=" + nomeInput;
+    url = url + "&frase=" + nascimentoInput;
+    url = encodeURI(url);
+
+    return url;
+  }
+  function CopyToClipboard() {
+    var el = document.createElement('textarea');
+    el.value = urlFinal();
+    el.setAttribute('readonly', '');
+    el.style.position = 'absolute';
+    el.style.left = '-9999px';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    alert("Legal!\nAgora você pode colar o link para o poema no aplicativo que quiser.");
+
+  }
+
+  function EnviarWhatsApp() {
+    var le = encodeURIComponent('Compartilhando com você a reescrita de um poema :) \r\n\r\n ' + urlFinal());
+
+    window.open("https://api.whatsapp.com/send?text=" + le,'_blank');
+
+  }
+</script>
+
+<!-- end content setup -->
