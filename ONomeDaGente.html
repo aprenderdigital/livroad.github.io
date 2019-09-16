@@ -78,7 +78,7 @@
 		  //tira a paginação do link obtido #book/page/10-11
 		  var posHash = urlFinal.indexOf("#");
 		  if (posHash>0) urlFinal = urlFinal.substring(0, posHash);
-		  urlFinal.replace("fid", "xid");	  
+		  urlFinal = urlFinal.replace("fid", "xid");	  
 
 		
 		var nameUP = getQueryString("nome");
