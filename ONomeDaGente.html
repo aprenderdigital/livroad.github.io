@@ -76,9 +76,8 @@
     	  if (url2 == null || url2 == "") window.location.href = "experimente.html?op=link";
 		  var urlFinal = 'https://livros.aprender.digital/ONomeDaGente.html?' + url2;
 		  //tira a paginação do link obtido #book/page/10-11
-		  var posHash = urlFinal.indexOf("#")
-		  if (posHash>0)
-			urlFinal = urlFinal.substring(0, posHash);
+		  var posHash = urlFinal.indexOf("#");
+		  if (posHash>0) urlFinal = urlFinal.substring(0, posHash);
 		  urlFinal.replace("fid", "xid");	  
 
 		
