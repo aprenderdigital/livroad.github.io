@@ -334,13 +334,20 @@ function onClickEditNascimento() {
 <script>
   function urlFinal() {
     var url;
-    nomeInput = document.getElementById("nomeInput").value;
-    nascimentoInput = document.getElementById("nascimentoInput").value || "";
-    querencaInput1 = document.getElementById("querencaInput1").value || "";
-    querencaInput2 = document.getElementById("querencaInput2").value || "";
-    querencaInput3 = document.getElementById("querencaInput3").value || "";
-    querencaInput4 = document.getElementById("querencaInput4").value || "";
-    corridaInput = document.getElementById("corridaInput").value || "";
+    nomeInput = document.getElementById("nomeInput").value || "";
+    //Se o usuário não passar pela página o HTML não foi carregado
+    if (document.getElementById("nascimentoInput")) nascimentoInput = document.getElementById("nascimentoInput").value; 
+    else nascimentoInput =  "";
+    if (document.getElementById("querencaInput1")) querencaInput1 = document.getElementById("querencaInput1").value; 
+    else querencaInput1 = "";
+    if (document.getElementById("querencaInput2")) querencaInput2 = document.getElementById("querencaInput2").value;
+    else querencaInput2 = "";
+    if (document.getElementById("querencaInput3")) querencaInput3 = document.getElementById("querencaInput3").value;
+    else querencaInput3 = "";
+    if (document.getElementById("querencaInput4")) querencaInput4 = document.getElementById("querencaInput4").value;
+    else querencaInput4 = "";
+    if (document.getElementById("corridaInput")) corridaInput = document.getElementById("corridaInput").value;
+    else corridaInput = "";
 
     if (nomeInput == nomeInputDefault) nomeInput = "";
     if (nascimentoInput == nascimentoInputDefault) nascimentoInput = "";
