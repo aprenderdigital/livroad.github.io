@@ -77,10 +77,51 @@
 	}
 
 	var frase = getQueryString("frase");
-	if (frase == null || frase == "") frase = "Tenha um ótimo dia!";
+	if (frase == null || frase == "") frase = "Se abra pra vida";
 	else {
-		if (nome.length > 150) {
-			nome = nome.substring(0,150);
+		if (frase.length > 150) {
+			frase = frase.substring(0,150);
+		}
+	}
+
+	var q1 = getQueryString("q1");
+	var q2 = getQueryString("q2");
+	var q3 = getQueryString("q3");
+	var q4 = getQueryString("q4");	
+	if ((q1 == null || q1 == "") && (q2 == null || q2 == "") && (q3 == null || q3 == "") && (q4 == null || q4 == "")) {
+		q1 = "Eu quero dormir na lua<br />";
+		q2 = "Eu quero voar com os ventos<br />";
+		q3 = "Eu quero tocar como a chuva<br />";
+		q4 = "Eu quero ser forte como uma formiga.";
+	}
+	if (q1 == null || q1 == "") q1 = "";
+	else {
+		if (q1.length > 80) q1 = q1.substring(0,80);
+		q1 = "Eu quero " + q1 + "<br />";
+	}
+	if (q2 == null || q2 == "") q2 = "";
+	else {
+		if (q2.length > 80) q2 = q2.substring(0,80);
+		q2 = "Eu quero " + q2 + "<br />";
+	}
+	if (q3 == null || q3 == "") q3 = "";
+	else {
+		if (q3.length > 80) q3 = q3.substring(0,80);
+		q3 = "Eu quero " + q3 + "<br />";
+	}
+	if (q4 == null || q4 == "") q4 = "";
+	else {
+		if (q4.length > 80) {
+			q4 = q4.substring(0,80);
+		}
+		q4 = "Eu quero " + q4;
+	}
+
+	var corrida = getQueryString("corrida");
+	if (corrida == null || corrida == "") corrida = "Corro não sei pra onde.";
+	else {
+		if (corrida.length > 150) {
+			corrida = corrida.substring(0,150);
 		}
 	}
 

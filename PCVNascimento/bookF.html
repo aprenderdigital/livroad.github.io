@@ -60,8 +60,6 @@ function onFocusNomeInput() {
     if (nomeInput.value == nomeInputDefault)
         nomeInput.select();
 }
-
-
 function onFocusOutNascimentoInput() {
     console.log("onFocusOutNascimentoInput");
 
@@ -75,7 +73,6 @@ function onFocusOutNascimentoInput() {
     buttonEditNascimento.style.display = "";
 
 } 
-
 function onClickEditNascimento() {
     console.log("onClickEditNascimento");
     var nascimentoInput = document.getElementById("nascimentoInput");
@@ -99,7 +96,7 @@ function onClickEditNascimento() {
             <spam id="nascimentoPersonalizado"></spam><br />
         </p>
         <center>
-            <button id="buttonEditNascimento" type="button" onclick="onClickEditNascimento()">Alterar texto</button>
+            <button id="buttonEditNascimento" type="button" onclick="onClickEditNascimento()">️✏️ Alterar texto</button>
         </center>
     </div>
     <div style="position: absolute; 
@@ -110,11 +107,196 @@ function onClickEditNascimento() {
     </div>
 </div>
 <div class="page">
+    <img src="PCVNascimento/pag10.jpg">
+    <div style="position: absolute; 
+    left: 40px; top: 23px; width: 545px">
+        <p class="texto-normal-branco">
+            Eu quero dormir na lua<br />
+            Eu quero voar como os ventos<br />
+            Eu quero tocar como a chuva<br />
+            Eu quero ser forte como uma formiga.
+        </p>
+    </div>
+    <div style="position: absolute; 
+    left: 50px; top: 472px; width: 545px">
+        <p class="texto-normal-preto">
+            &nbsp;&nbsp; Eu quero correr<br />
+            como as águas<br />
+            &nbsp;&nbsp; Eu quero que<br />
+            minha vida<br />
+            tenha muitos<br />
+            nascentes e poentes e<br />
+            assim poderia começar<br />
+            tudo novamente...
+        </p>
+    </div>
+</div>
+
+<script>
+    var querencaInputDefault = "Escreva aqui o que você quer."
+    var corridaInputDefault = "Escreva seu texto aqui." //Reaproveitando o javascript da querenca
+    
+    function onFocusQuerencaInput(idInput, idPersonalizado, idButton) {
+        console.log("onFocusQuerenca", idInput);
+        var querencaInput = document.getElementById(idInput);
+        var querencaPersonalizado = document.getElementById(idPersonalizado);
+        var buttonEditQuerenca = document.getElementById(idButton);
+    
+        buttonEditQuerenca.style.display = "";
+        querencaInput.style.display = "";
+    
+        //reaproveitamento :(
+        if (querencaInput.value == querencaInputDefault || querencaInput.value == corridaInputDefault)
+            querencaInput.select();
+    }
+    function onFocusOutQuerencaInput(idInput, idPersonalizado, idButton) {
+        console.log("onFocusOutQuerencaInput", idInput);
+    
+        var querencaInput = document.getElementById(idInput);
+        var querencaPersonalizado = document.getElementById(idPersonalizado);
+        var buttonEditQuerenca = document.getElementById(idButton);
+    
+        querencaInput.style.display = "none";
+        querencaPersonalizado.innerHTML = querencaInput.value;
+        querencaPersonalizado.style.display = "";
+        buttonEditQuerenca.style.display = "";
+    
+    } 
+    function onClickEditQuerenca(idInput, idPersonalizado, idButton) {
+        console.log("onClickEditQuerenca",idInput);
+        var querencaInput = document.getElementById(idInput);
+        var querencaPersonalizado = document.getElementById(idPersonalizado);
+        var buttonEditQuerenca = document.getElementById(idButton);
+    
+        querencaInput.style.display = "";
+        querencaPersonalizado.style.display = "none";
+        buttonEditQuerenca.style.display = "none";
+    
+        querencaInput.focus();
+    }
+</script>
+<div class="page" data-unload="false">
+    <img src="PCVNascimento/pag12.jpg">
+    <div style="position: absolute; 
+    left: 80px; top: 30px; ">
+        <p class="texto-instrucao-bk-escuro-big">
+            E <b>VOCÊ?</b><br />
+            QUAL A SUA <b>QUERENÇA</b>?
+        </p>
+    </div>
+    <div style="position: absolute; 
+    left: 60px; top: 210px; width: 455px">
+        <p class="texto-normal-preto">
+            Eu quero <spam id="querencaPersonalizado1"></spam><br />
+        </p>
+    </div>
+    <div style="position: absolute; 
+    left: 10px; top: 213px; width: 50px">
+        <button id="buttonEditQuerenca1" type="button" onclick="onClickEditQuerenca('querencaInput1','querencaPersonalizado1','buttonEditQuerenca1')">✏️</button>
+    </div>
+    <div style="position: absolute; 
+    left: 150px; top: 209px; width: 380px">
+        <input id="querencaInput1" class="pf-activecontent" onfocus="onFocusQuerencaInput('querencaInput1','querencaPersonalizado1','buttonEditQuerenca1')" maxlength="80"
+        onfocusout="onFocusOutQuerencaInput('querencaInput1','querencaPersonalizado1','buttonEditQuerenca1')">
+        <script>document.getElementById("querencaInput1").value = querencaInputDefault;</script>
+    </div>
+
+    <div style="position: absolute; 
+    left: 60px; top: 260px; width: 455px">
+        <p class="texto-normal-preto">
+            Eu quero <spam id="querencaPersonalizado2"></spam><br />
+        </p>
+    </div>
+    <div style="position: absolute; 
+    left: 10px; top: 263px; width: 50px">
+        <button id="buttonEditQuerenca2" type="button" onclick="onClickEditQuerenca('querencaInput2','querencaPersonalizado2','buttonEditQuerenca2')">✏️</button>
+    </div>
+    <div style="position: absolute; 
+    left: 150px; top: 259px; width: 380px">
+        <input id="querencaInput2" class="pf-activecontent" onfocus="onFocusQuerencaInput('querencaInput2','querencaPersonalizado2','buttonEditQuerenca2')" maxlength="80"
+        onfocusout="onFocusOutQuerencaInput('querencaInput2','querencaPersonalizado2','buttonEditQuerenca2')">
+        <script>document.getElementById("querencaInput2").value = querencaInputDefault;</script>
+    </div>
+
+    <div style="position: absolute; 
+    left: 60px; top: 310px; width: 455px">
+        <p class="texto-normal-preto">
+            Eu quero <spam id="querencaPersonalizado3"></spam><br />
+        </p>
+    </div>
+    <div style="position: absolute; 
+    left: 10px; top: 313px; width: 50px">
+        <button id="buttonEditQuerenca3" type="button" onclick="onClickEditQuerenca('querencaInput3','querencaPersonalizado3','buttonEditQuerenca3')">✏️</button>
+    </div>
+    <div style="position: absolute; 
+    left: 150px; top: 309px; width: 380px">
+        <input id="querencaInput3" class="pf-activecontent" onfocus="onFocusQuerencaInput('querencaInput3','querencaPersonalizado3','buttonEditQuerenca3')" maxlength="80"
+        onfocusout="onFocusOutQuerencaInput('querencaInput3','querencaPersonalizado3','buttonEditQuerenca3')">
+        <script>document.getElementById("querencaInput3").value = querencaInputDefault;</script>
+    </div>
+
+    <div style="position: absolute; 
+    left: 60px; top: 360px; width: 455px">
+        <p class="texto-normal-preto">
+            Eu quero <spam id="querencaPersonalizado4"></spam><br />
+        </p>
+    </div>
+    <div style="position: absolute; 
+    left: 10px; top: 363px; width: 50px">
+        <button id="buttonEditQuerenca4" type="button" onclick="onClickEditQuerenca('querencaInput4','querencaPersonalizado4','buttonEditQuerenca4')">✏️</button>
+    </div>
+    <div style="position: absolute; 
+    left: 150px; top: 359px; width: 380px">
+        <input id="querencaInput4" class="pf-activecontent" onfocus="onFocusQuerencaInput('querencaInput4','querencaPersonalizado4','buttonEditQuerenca4')" maxlength="80"
+        onfocusout="onFocusOutQuerencaInput('querencaInput4','querencaPersonalizado4','buttonEditQuerenca4')">
+        <script>document.getElementById("querencaInput4").value = querencaInputDefault;</script>
+    </div>
+</div>
+<div class="page" data-unload="false">
+    <img src="PCVNascimento/pag13.jpg">
+    <div style="position: absolute; 
+    left: 25px; top: 130px; width: 545px">
+        <p class="texto-normal-centralizado-darker">
+            As águas correm pro mar<br />
+            E eu<br />
+            Corro não sei pra onde.
+        </p>
+    </div>
+</div>
+<div class="page" data-unload="false">
+    <img src="PCVNascimento/pag13bk.jpg">
+    <!--Reaproveitando o javascript da querenca-->
+    <div style="position: absolute; 
+    left: 80px; top: 50px; ">
+        <p class="texto-instrucao-bk-escuro-big">
+            AGORA É COM <b>VOCÊ?</b><br />
+            ESCREVA A SUA FRASE <b>ABAIXO</b>?
+        </p>
+    </div>
+    <div style="position: absolute; 
+    left: 5px; top: 430px; width: 545px">
+        <p class="texto-normal-centralizado-darker">
+            As águas correm pro mar<br />
+            E eu<br />
+            <spam id="corridaPersonalizado"></spam>
+        </p>
+        <center>
+            <button id="buttonEditCorrida" type="button" onclick="onClickEditQuerenca('corridaInput','corridaPersonalizado','buttonEditCorrida')">✏️ Alterar texto</button>
+        </center>
+    </div>
+    <div style="position: absolute; 
+    left: 70px; top: 510px; width: 430px">
+        <input id="corridaInput" class="pf-activecontent" onfocus="onFocusQuerencaInput('corridaInput','corridaPersonalizado','buttonEditCorrida')" maxlength="80"
+        onfocusout="onFocusOutQuerencaInput('corridaInput','corridaPersonalizado','buttonEditCorrida')">
+        <script>document.getElementById("corridaInput").value = corridaInputDefault;</script>
+    </div>
+</div>
+<div class="page">
     <img src="PCVNascimento/pag34.jpg">
     <div style="position: absolute; 
     left: 70px; top: 25px; width: 435px">
         <p class="texto-instrucao-bk-escuro">
-            ESTOU MUITO FELIZ QUE VOCÊ PARTICIPOU DA REESCRITA DESTE POEMA COMIGO.<br />
+            ESTOU MUITO FELIZ QUE VOCÊ PARTICIPOU DA REESCRITA DESTES POEMAS COMIGO.<br />
             QUE TAL <b>COMPARTILHÁ-LO</b>?
         </p>
     </div>
@@ -153,14 +335,30 @@ function onClickEditNascimento() {
   function urlFinal() {
     var url;
     nomeInput = document.getElementById("nomeInput").value;
-    nascimentoInput = document.getElementById("nascimentoInput").value;
+    nascimentoInput = document.getElementById("nascimentoInput").value || "";
+    querencaInput1 = document.getElementById("querencaInput1").value || "";
+    querencaInput2 = document.getElementById("querencaInput2").value || "";
+    querencaInput3 = document.getElementById("querencaInput3").value || "";
+    querencaInput4 = document.getElementById("querencaInput4").value || "";
+    corridaInput = document.getElementById("corridaInput").value || "";
 
     if (nomeInput == nomeInputDefault) nomeInput = "";
     if (nascimentoInput == nascimentoInputDefault) nascimentoInput = "";
+    if (querencaInput1 == querencaInputDefault) querencaInput1 = "";
+    if (querencaInput2 == querencaInputDefault) querencaInput2 = "";
+    if (querencaInput3 == querencaInputDefault) querencaInput3 = "";
+    if (querencaInput4 == querencaInputDefault) querencaInput4 = "";
+    if (corridaInput == corridaInputDefault) corridaInput = "";
+    
 
     url = 'https://livros.aprender.digital/PCVNascimento.html?';
     url = url + "nome=" + nomeInput;
     url = url + "&frase=" + nascimentoInput;
+    url = url + "&q1=" + querencaInput1;
+    url = url + "&q2=" + querencaInput2;
+    url = url + "&q3=" + querencaInput3;
+    url = url + "&q4=" + querencaInput4;
+    url = url + "&corrida=" + corridaInput;
     url = encodeURI(url);
 
     return url;
