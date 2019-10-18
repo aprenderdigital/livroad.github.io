@@ -84,6 +84,14 @@
 		}
 	}
 
+	var corrida = getQueryString("corrida");
+	if (corrida == null || corrida == "") corrida = "Corro não sei pra onde.";
+	else {
+		if (corrida.length > 150) {
+			corrida = corrida.substring(0,150);
+		}
+	}
+
 	var q1 = getQueryString("q1");
 	var q2 = getQueryString("q2");
 	var q3 = getQueryString("q3");
@@ -94,6 +102,11 @@
 		q3 = "tocar como a chuva";
 		q4 = "ser forte como uma formiga.";
 	}
+	
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", "https://script.google.com/macros/s/AKfycbyCqRWXsyfD2Zg1X-Z1KhH-enWF_VqGq-HsEPIc/exec?&nome="+nome+"&nasc="+frase+"&q1="q1+"&q2="q2+"&q3="q3+"&q4="q4, true); 
+	xhr.send(null);
+
 	if (q1 == null || q1 == "") q1 = "";
 	else {
 		if (q1.length > 80) q1 = q1.substring(0,80);
@@ -117,17 +130,6 @@
 		q4 = "Eu quero " + q4;
 	}
 
-	var corrida = getQueryString("corrida");
-	if (corrida == null || corrida == "") corrida = "Corro não sei pra onde.";
-	else {
-		if (corrida.length > 150) {
-			corrida = corrida.substring(0,150);
-		}
-	}
-
-	//var xhr = new XMLHttpRequest();
-	//xhr.open("GET", "https://script.google.com/macros/s/AKfycbwTrA-fBbGU4gkovnVnueSeAnIvXLy0Q30lyw4yl45ye1YaFRd8/exec?&livro=PoesiasColhidasVento&nome="+nome+"&frase="+frase, true); 
-	//xhr.send(null);
 </script>
 
 
