@@ -1,0 +1,33 @@
+p.texto-normal {
+  font-family: 'Patrick Hand', cursive;
+  color: black;
+  font-size: 13pt;
+}
+
+p.texto-normal-centralizado {
+  font-family: 'Patrick Hand', cursive;
+  color: black;
+  font-size: 13pt;
+  text-align : center;
+}
+
+p.texto-nome-rock {
+  font-family: 'Rock Salt', cursive;
+  color: red;
+  font-size: 15pt;
+  text-align : center;
+}
+
+p.texto-nome-sacramento {
+  font-family: 'Sacramento', cursive;
+  color: rgb(29, 10, 114);
+  font-size: 24pt;
+  text-align : right;
+  transform: rotate(9deg);
+}
+
+p.texto-grande {
+  font-family: 'Patrick Hand', cursive;
+  color: black;
+  font-size: 17pt;
+}
