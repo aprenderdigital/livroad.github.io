@@ -248,27 +248,64 @@
 <div class="cover">
   <div class="container texto-final">
     <div=class="row">
-      <p>
-        Gostou da história?
-      </p>
-      <p>
-        Gostaria de oferecer esta surpresa para outras pessoas e incentivar a leitura?
-      </p>
-      <p>
-        Então pressione o botão abaixo.
-      </p>
-      <center>
-        <br>
-        <a class="btn btn-success" role="button" target="_blank" href="http://m.me/DiaNacionalDoLivroInfantil">
-          Ajude a criar um Brasil de Leitores!
-        </a>
-      </center>
-      <br> <br> <br> <br> <br> 
-    </div>
+        <p>
+            Gostou da história?
+        </p>
+        <p>
+            Gostaria de oferecer esta surpresa para outras pessoas e incentivar a leitura?
+        </p>
+        <p>
+            Então, escolha um dos botões abaixo.
+        </p>
+        <center>
+            <p><button type="link" class="btn btn-primary" onclick="window.open('https://aprender.digital/#mu-pricing')">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; Comprar versão impressa do livro &nbsp; 
+            </button></p>
+            <p><button type="link" class="btn btn-secondary" onclick="CopyToClipboard()">
+                    Copiar o link de acesso ao livro digital
+                </button></p>
+            <p><button type="link" class="btn btn-success" onclick="EnviarWhatsApp()">
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>&nbsp; Enviar livro digital pelo WhatsApp &nbsp;
+                </button></p>
+            <p><button type="link" class="btn btn-warning" onclick="NovoLivro()">
+                    Personalizar livro digital para outra criança
+                </button></p>
+
+        </center>
+        
+        <br> <br> <br>
+    </div>  
 </div>
 <div class="cover">
   <img src="ONomeDaGente/contra-capa.jpg">
 </div>
+
+<script>
+  function CopyToClipboard() {
+      var el = document.createElement('textarea');
+      el.value = urlFinal;
+      el.setAttribute('readonly', '');
+      el.style.position = 'absolute';
+      el.style.left = '-9999px';
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      alert("OK! Agora você pode colar o link do livro no aplicativo que quiser.");
+
+  }
+
+  function EnviarWhatsApp() {
+      var le = encodeURIComponent('Personalizei um livro para você. Espero que goste!!! :) \r\n\r\n ' + urlFinal);
+
+      window.open("https://api.whatsapp.com/send?text=" + le, '_blank');
+
+  }
+
+  function NovoLivro() {
+      window.location = "https://livros.aprender.digital";
+  }
+</script>
 
 
 <!-- end content setup -->
