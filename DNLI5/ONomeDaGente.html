@@ -50,7 +50,18 @@
 <body>
 	<script>
 		var url_string = window.location.href;
-			
+
+		//Usado para o compartilhamento do livro
+			var urlSplit = url_string.split('?');
+    	var url1 = urlSplit[0];
+    	var url2 = urlSplit[1];
+    	if (url2 == null || url2 == "") window.location.href = "experimente.html?op=link";
+		  var urlFinal = 'https://livros.aprender.digital/DNLI5/ONomeDaGente.html?' + url2;
+		  //tira a paginação do link obtido #book/page/10-11
+		  var posHash = urlFinal.indexOf("#");
+		  if (posHash>0) urlFinal = urlFinal.substring(0, posHash);
+		  urlFinal = urlFinal.replace("fid", "xid");	  
+
 		var nameUP = getQueryString("nome");
 		if (nameUP== null || nameUP == "") nameUP = "JULIA";
 		else {
