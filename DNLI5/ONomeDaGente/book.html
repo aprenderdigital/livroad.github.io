@@ -272,6 +272,31 @@
   <img src="ONomeDaGente/contra-capa.jpg">
 </div>
 
+<script>
+  function CopyToClipboard() {
+      var el = document.createElement('textarea');
+      el.value = urlFinal;
+      el.setAttribute('readonly', '');
+      el.style.position = 'absolute';
+      el.style.left = '-9999px';
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      alert("OK! Agora você pode colar o link do livro no aplicativo que quiser.");
 
+  }
+
+  function EnviarWhatsApp() {
+      var le = encodeURIComponent('Personalizei um livro para você. Espero que goste!!! :) \r\n\r\n ' + urlFinal);
+
+      window.open("https://api.whatsapp.com/send?text=" + le, '_blank');
+
+  }
+
+  function NovoLivro() {
+      window.location = "https://livros.aprender.digital";
+  }
+</script>
 
 <!-- end content setup -->
