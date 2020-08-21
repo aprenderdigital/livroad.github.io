@@ -19,3 +19,14 @@
 .cor {
   color: orange;
 }
+
+.back-div-video {
+  /*background-color: blue;*/
+  background-image: url("/ONomeDaGente/page-video2.jpg");
+  width:'600';
+  height:'450';
+}
+
+.iframe-video {
+  margin-left:25px;
+}

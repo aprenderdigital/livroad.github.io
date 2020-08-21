@@ -184,37 +184,69 @@
         <script>document.getElementById("p08-name").innerHTML = nameUP;</script>
     </div>
 </div>
-<div class="cover">
+<div class="page">
     <div class="container texto-final">
         <div=class="row">
-            <p>
+
                 Gostou da história?
+
+            <p>
+                Quer oferecer esta surpresa para outras pessoas e incentivar a leitura?
             </p>
             <p>
-                Gostaria de oferecer esta surpresa para outras pessoas e incentivar a leitura?
-            </p>
-            <p>
-                Então, escolha um dos botões abaixo.
+                Então, escolha um dos botões abaixo:
             </p>
             <center>
-                <p><button type="link" class="btn btn-primary" onclick="window.open('https://aprender.digital/#mu-pricing')">
-                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp; Comprar versão impressa do livro &nbsp; 
+                <p><button type="link" class="btn btn-success" onclick="ProximaPagina()">
+                    <i class="fa fa-heart" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Conhecer os recursos <b>exclusivos</b> <br>da versão impressa! 
                 </button></p>
                 <p><button type="link" class="btn btn-secondary" onclick="CopyToClipboard()">
-                        Copiar o link de acesso ao livro digital
+                    &nbsp;&nbsp;&nbsp;Copiar o link de acesso ao livro digital&nbsp;&nbsp;&nbsp;
                     </button></p>
-                <p><button type="link" class="btn btn-success" onclick="EnviarWhatsApp()">
-                    <i class="fa fa-whatsapp" aria-hidden="true"></i>&nbsp; Enviar livro digital pelo WhatsApp &nbsp;
+                <p><button type="link" class="btn btn-primary" onclick="EnviarWhatsApp()">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Enviar livro digital pelo WhatsApp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </button></p>
                 <p><button type="link" class="btn btn-warning" onclick="NovoLivro()">
                         Personalizar livro digital para outra criança
                     </button></p>
 
             </center>
-            
             <br> <br> <br>
-        </div>  
+        </div> 
+    </div>   
 </div>
+
+<div class="page">
+  <div id="back-div-video" class="back-div-video">
+  <iframe class="iframe-video" width="445" height="445" src="https://www.youtube.com/embed/hp0oGm_dcMs?start=0.5&rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>  
+
+<div class="page">
+    <div class="container texto-final">
+        <div=class="row">
+            <br>
+            <br>
+            <center>
+                <p><button type="link" class="btn btn-primary" onclick="window.open('https://aprender.digital/#mu-pricing')">
+                    <i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp; Comprar versão impressa do livro &nbsp;&nbsp;&nbsp;&nbsp;  
+                </button></p>
+                <p><button type="link" class="btn btn-secondary" onclick="CopyToClipboard()">
+                    &nbsp;&nbsp;&nbsp;Copiar o link de acesso ao livro digital&nbsp;&nbsp;&nbsp;
+                    </button></p>
+                <p><button type="link" class="btn btn-success" onclick="EnviarWhatsApp()">
+                    <i class="fa fa-whatsapp" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp; Enviar livro digital pelo WhatsApp &nbsp;&nbsp;&nbsp;&nbsp;
+                    </button></p>
+                <p><button type="link" class="btn btn-warning" onclick="NovoLivro()">
+                        Personalizar livro digital para outra criança
+                    </button></p>
+
+            </center>
+            <br> <br> <br>
+        </div> 
+    </div>   
+</div>
+
 <div class="cover">
     <img src="ONomeDaGente/contra-capa.jpg">
 </div>
@@ -243,6 +275,12 @@
 
     function NovoLivro() {
         window.location = "https://livros.aprender.digital";
+    }
+
+    function ProximaPagina() {
+        document.getElementById("back-div-video").innerHTML = '  <iframe class="iframe-video" width="445" height="445" src="https://www.youtube.com/embed/hp0oGm_dcMs?start=0.5&rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'; 
+        var pageflipContext = $("#pageflip").pageflip();
+        pageflipContext.gotoNextPage( ); 
     }
 </script>
 
