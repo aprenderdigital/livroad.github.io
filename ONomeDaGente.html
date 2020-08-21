@@ -143,6 +143,17 @@
 	<!-- start script needed to run pageflip -->
 	<script type="text/javascript">
 		var $pageflip = $('#pageflip');
+		var playVideo = false;
+		var EventCallBackObject = {	
+			onShow(pn) {
+				//console.log("p:"+ pn + " playVideo:" + playVideo);
+				if (playVideo && pn == 12) {
+					//alert("play");
+					document.getElementById("back-div-video").innerHTML = '  <iframe class="iframe-video" width="445" height="445" src="https://www.youtube.com/embed/hp0oGm_dcMs?start=0.5&rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'; 
+					playVideo = false;
+				}
+			}
+		};
 
 		/* Initialize & Start Pageflip 5 */
 		$pageflip.pageflipInit({
@@ -173,6 +184,9 @@
 			Key: Key.Key
 			/* book ID - used as CSS class name */
 		}, "book");
+
+		$pageflip.pageflip().setPFEventCallBack(EventCallBackObject);
+
 
 	</script>
 	<!-- end script needed to run pageflip -->
